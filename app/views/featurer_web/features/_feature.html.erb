@@ -1,0 +1,11 @@
+<tr>
+  <td><%= feature.name %></td>
+  <td>
+    <% formattted_matching_values(feature.matching_values).each do |matching_value| %>
+      <div> <%= matching_value %> </div>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to "Edit", edit_feature_path(feature.name), class: "btn btn-default" %>
+    <%= link_to "Destroy", feature_path(feature.name), class: "btn btn-warning", method: :delete %>
+</tr>

@@ -1,0 +1,3 @@
+<%= form_tag features_path(feature.name), method: :post do %>
+  <%= render partial: 'form', locals: { feature: feature } %>
+<% end %>

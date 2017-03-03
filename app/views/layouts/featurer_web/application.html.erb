@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FeaturerWeb</title>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", media: "all" %>
+  <%= stylesheet_link_tag "featurer_web/application", media: "all" %>
+
+  <%= javascript_include_tag "https://code.jquery.com/jquery-3.1.1.min.js" %>
+  <%= javascript_include_tag "featurer_web/application" %>
+</head>
+<body>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="<%= root_path %>">Featurer</a>
+    </div>
+
+    <% if current_user %>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><%= link_to "Logout", logout_path %></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    <% end %>
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container">
+  <% if flash[:error] %>
+    <div class="alert alert-warning"><%= flash[:error] %></div>
+  <% end %>
+  <% if flash[:info] %>
+    <div class="alert alert-success"><%= flash[:info] %></div>
+  <% end %>
+
+
+  <%= yield %>
+</div>
+
+</body>
+</html>

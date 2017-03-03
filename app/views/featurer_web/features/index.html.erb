@@ -1,0 +1,13 @@
+
+<table class="table table-bordered table-striped">
+  <thead>
+    <th>Feature name</th>
+    <th>Matching values</th>
+    <th width="150px"/>
+  </thead>
+  <tbody>
+    <%= render partial: 'feature', collection: collection %>
+  </tbody>
+</table>
+
+<%= link_to "Create new feature", new_feature_path, class: "pull-right btn btn-primary" %>

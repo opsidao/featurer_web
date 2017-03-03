@@ -1,0 +1,11 @@
+<div class="form-group">
+  <label for="name">Name for your new feature</label>
+  <input class="form-control" name="name" placeholder="Feature name" value="<%= feature.name %>">
+</div>
+
+<div class="form-group">
+  <label for="matching_values">Matching values for your feature</label>
+  <textarea class="form-control" name="matching_values" placeholder="One matching value per line" rows=10><%= formattted_matching_values(feature.matching_values).join("\r\n") %></textarea>
+</div>
+
+<input type="submit" class="btn btn-success"></input>
