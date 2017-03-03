@@ -2,4 +2,4 @@ source 'https://rubygems.org'
 
 gemspec
 
-gem 'featurer', path: '../featurer'
+gem 'featurer', github: 'ainformatico/featurer', branch: 'regular_expressions'
