@@ -1,11 +1,28 @@
 <div class="form-group">
   <label for="name">Name for your new feature</label>
   <input class="form-control" name="name" placeholder="Feature name" value="<%= feature.name %>">
+  <div class="alert alert-info">Any string can be used as a feature name, even with spaces.</div>
 </div>
 
 <div class="form-group">
   <label for="matching_values">Matching values for your feature</label>
   <textarea class="form-control" name="matching_values" placeholder="One matching value per line" rows=10><%= formattted_matching_values(feature.matching_values).join("\r\n") %></textarea>
+  <div class="alert alert-info">
+    The matching values can be one of the following:
+    <li>
+      <strong>Regular expressions</strong> Any line that starts and ends with a forward slash (/) is considered a
+      regular expression that will be matched to the value passed to Featurer#on?.
+    </li>
+    <li>
+      <strong>Boolean</strong> If a feature has a matching_value equal to 'true' it is enabled globally regardless of
+      the value passed to Featurer#on?.
+    </li>
+    <li>
+      <strong>Another string</strong> Any other type of string is matched literally against the value passed to
+      Featurer#on?
+    </li>
+  </div>
+
 </div>
 
 <input type="submit" class="btn btn-success"></input>
